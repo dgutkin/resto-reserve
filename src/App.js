@@ -26,10 +26,10 @@ function App() {
           </Navbar>
         </Row>
         <Row>
-          <Col>
+          <Col id="restaurant-list-col">
             <RestaurantList handleReserve={handleReserve}/>
           </Col>
-          <Col>
+          <Col id="reservation-form-col">
             <ReservationForm show={reserve}/>
           </Col>
         </Row>

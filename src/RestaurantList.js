@@ -55,6 +55,7 @@ function RestaurantList({handleReserve}) {
 
     return (
         <div>
+            <h4 id="restaurant-list-label">Restaurants</h4>
             {restaurantCardList}
         </div>
     );
