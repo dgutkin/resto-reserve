@@ -21,10 +21,12 @@ function ReservationForm({show, restaurantName}) {
 
     const handleDate = (e) => {
         setDate(e.target.value);
+        e.preventDefault();
     }
 
     const handleTime = (e) => {
         setTime(e.target.value);
+        e.preventDefault();
     }
 
     const handleConfirm = (e) => {
@@ -63,7 +65,7 @@ function ReservationForm({show, restaurantName}) {
                         <Button variant="primary" type="submit" onClick={handleConfirm}>
                             Confirm
                         </Button>
-                        
+
                     </Form>
                     </div>
                     
