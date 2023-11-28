@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import RestaurantList from './RestaurantList.js';
+import ReservationForm from './ReservationForm.js';
+
+import React, {useState} from 'react';
+import {Navbar, Row, Container, Col} from 'react-bootstrap';
 
 function App() {
+
+  const [reserve, setReserve] = useState(false);
+
+  const handleReserve = (e) => {
+
+    setReserve(true);
+
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container fluid>
+        <Row>
+          <Navbar expand="lg" className="bg-body-primary">
+          <Container>
+            <Navbar.Brand href="#">Resto Reserve</Navbar.Brand>
+          </Container>
+          </Navbar>
+        </Row>
+        <Row>
+          <Col>
+            <RestaurantList handleReserve={handleReserve}/>
+          </Col>
+          <Col>
+            <ReservationForm show={reserve}/>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
+
 }
 
 export default App;
