@@ -8,8 +8,8 @@ function RestaurantCard({name, rating, description, handleReserve}) {
             <Row>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
-                <Card.Text>{description}</Card.Text>
-                <Button name={name} onClick={handleReserve}>Reserve</Button>
+                <Card.Text>{description}<br/>Rating: {rating}/5</Card.Text>
+                <Button name={name} onClick={() => handleReserve(name)}>Reserve</Button>
             </Card.Body>
             </Row>
             

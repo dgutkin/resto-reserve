@@ -18,14 +18,36 @@
 .card {
   padding: 1rem;
   max-width: 18rem;
-  box-shadow: 5px 5px #888888;
+  box-shadow: 5px 5px #aaaaaa;
   margin: 1rem;
 }
+
 #restaurant-list-col {
   margin-left: 2rem;
+  max-width: 30rem;
 }
 
 #restaurant-list-label {
   margin-left: 1rem;
   margin-bottom: 2rem;
 }
+
+#reservation-form-col {
+  max-width: 30rem;
+}
+
+#reservation-form-label {
+  margin-bottom: 2rem;
+}
+
+#reservation-form {
+  padding: 1rem;
+  border: 1px solid #e7e7e7;
+  box-shadow: 5px 5px #aaaaaa;
+  border-radius: 5px;
+}
+
+#for-restaurant-label {
+  font-weight: 700;
+}
+

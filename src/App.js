@@ -8,10 +8,12 @@ import {Navbar, Row, Container, Col} from 'react-bootstrap';
 function App() {
 
   const [reserve, setReserve] = useState(false);
+  const [restaurant, setRestaurant] = useState("");
 
-  const handleReserve = (e) => {
+  const handleReserve = (name) => {
 
     setReserve(true);
+    setRestaurant(name);
 
   }
 
@@ -25,12 +27,12 @@ function App() {
           </Container>
           </Navbar>
         </Row>
-        <Row>
+        <Row id="body-row">
           <Col id="restaurant-list-col">
             <RestaurantList handleReserve={handleReserve}/>
           </Col>
           <Col id="reservation-form-col">
-            <ReservationForm show={reserve}/>
+            <ReservationForm show={reserve} restaurantName={restaurant}/>
           </Col>
         </Row>
       </Container>
