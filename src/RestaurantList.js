@@ -9,7 +9,9 @@ function RestaurantList({handleReserve}) {
 
     useEffect(() => {
 
-        fetch('http://localhost:1337/graphql',{
+        const fetchData = async () => {
+
+            return fetch('http://localhost:1337/graphql',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,12 +34,30 @@ function RestaurantList({handleReserve}) {
                 variables: {}
             }).then((res) => {
                 return res.json();
-            }).then((data) => {
-                const clean = data.data.restaurants.data.map((item) => {
-                    return item.attributes;
-                });
-                setRestaurants(clean);
+            }).catch((error) => {Promise.reject("error")});
+
+        }
+
+        const cleanData = (data) => {
+            
+            const dataInner = data.data.restaurants.data;
+            const clean = dataInner.map((item) => {
+                return item.attributes;
             });
+            
+            return clean;
+
+        }
+
+        const getFromApi = async () => {
+
+            let result = await fetchData();
+            let cleanResult = cleanData(result);
+            setRestaurants(cleanResult);
+
+        }
+
+        getFromApi();
         
     }, []);
 
